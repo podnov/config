@@ -51,6 +51,9 @@
   #checkout previous branch
   co- = checkout -
   
+  #fetch ref & checkout FETCH_HEAD
+  fco = "!_() { git fetch \"$@\" && git checkout FETCH_HEAD; }; _"
+  
   #add all
   aa = add . -A
   
