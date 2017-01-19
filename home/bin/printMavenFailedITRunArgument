@@ -1,0 +1,20 @@
+#!/bin/bash
+
+relativePath=$1
+reportsPath="target/failsafe-reports/*"
+
+if [ ! -z "$relativePath" ]; then
+	relativePath="$relativePath/"
+fi
+
+reportsRelativePath="$relativePath$reportsPath"
+
+failedTests=$(awk '/.*(errors|failures)=\"[^0]/{ testName = gensub(/.*testsuite name=\"(.*)\" time.*/, "\\1", "g", $0); print testName; }' $reportsRelativePath)
+
+
+if [ -z "$failedTests" ]; then
+	exit 1
+else
+	testList=$(echo $failedTests | sed -e 's/ /,/g')
+	echo "-Dit.test=$testList"
+fi
