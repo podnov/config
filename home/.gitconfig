@@ -17,6 +17,8 @@
   com = checkout master
   po = !git pull origin || git pull origin
   stap = stash pop
+  staki = stash --keep-index
+  stakiu = stash --keep-index -u
   clfd = clean -f -d
   #clean branches (delete branches that have already been merged on to master)
   clbr = !git branch --merged master | grep -v 'master$' | xargs git branch -d
@@ -67,6 +69,9 @@
   urb = !(git com && git po && git co- && git rbim)
 
   plrb = pull --rebase origin master
+  
+  #reset and checkout
+  rco = !sh -c '(git reset $1 && git co $1)' -
   
   #Stash CheckOut
   sco = !sh -c '(git aa && git sta && git co $1 && git stap)' -
