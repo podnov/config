@@ -20,6 +20,7 @@
   clfd = clean -f -d
   #clean branches (delete branches that have already been merged on to master)
   clbr = !git branch --merged master | grep -v 'master$' | xargs git branch -d
+  rbi = rebase -i
   rbim = rebase -i master
   rbc = rebase --continue
   rba = rebase --abort
@@ -53,6 +54,7 @@
   
   #fetch ref & checkout FETCH_HEAD
   fco = "!_() { git fetch \"$@\" && git checkout FETCH_HEAD; }; _"
+  fcoo = "!_() { git fco origin \"$@\"; }; _"
   
   #add all
   aa = add . -A
@@ -95,4 +97,5 @@
   # Show files ignored by git:
   ign = ls-files -o -i --exclude-standard
 
+  pushoh = push origin HEAD
   pushohf = push origin HEAD -f
