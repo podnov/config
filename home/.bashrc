@@ -28,6 +28,20 @@ eval "$command"
 
 }
 
+
+mcipde() {
+
+# mvn clean install project dependents exclude (project)
+
+cmd="mvn clean install -pl $1,\!$1 -am ${@:2}"
+
+echo "$cmd"
+eval "$cmd"
+echo "$cmd"
+
+}
+
+
 eval `ssh-agent`
 ssh-add
 
@@ -35,9 +49,10 @@ ssh-add
 alias gerrit='ssh -p 29418 zeimet@localhost gerrit'
 
 alias mci='mvnrun clean install'
+alias mcipde='mcipde'
+alias mcit='mvnrun clean test-compile integration-test'
 alias mcp='mvnrun clean package'
 alias mcv='mvnrun clean verify'
-alias mcit='mvnrun clean test-compile integration-test'
 alias mit='mvnrun test-compile integration-test'
 
 alias vroll='vroll'
