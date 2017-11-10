@@ -31,7 +31,7 @@
   #commit amend all
   ciaa = commit --amend -a
   #commit amend all force (don't update commit message)
-  ciaaf = !(git log -n 1 --pretty=%B | git commit -F - --amend -a && git status)
+  ciaaf = !(git commit --amend -a --no-edit && git status)
   cp = cherry-pick
   
   cpc = !(git cp --continue)
