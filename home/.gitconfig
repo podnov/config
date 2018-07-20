@@ -62,11 +62,14 @@
   #update master
   u = !(git com && git po)
   
+  uu = !(git com && git pull upstream master)
+
   #add, commit ammend all force
   aciaaf = !(git aa && git ciaaf)
   
   #Update ReBase: checkout master, pull origin, checkout previous branch, rebase -i master
   urb = !(git com && git po && git co- && git rbim)
+  uurb = !(git fetch upstream master && git rebase -i upstream/master)
 
   plrb = pull --rebase origin master
   
