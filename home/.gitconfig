@@ -101,4 +101,4 @@
   ign = ls-files -o -i --exclude-standard
 
   pushoh = push origin HEAD
-  pushohf = push origin HEAD -f
+  pushohf = push origin HEAD --force-with-lease
