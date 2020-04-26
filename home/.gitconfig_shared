@@ -1,4 +1,5 @@
 [core]
+  editor = vim
   ignorecase = false
   longpaths = true
 
