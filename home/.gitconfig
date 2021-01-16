@@ -8,3 +8,5 @@
 	filemode = false
 [credential]
 	helper = cache --timeout=300
+[alias]
+	com = checkout main
