@@ -14,9 +14,11 @@
   #commit amend
   cia = commit --amend
   #commit amend all
-  ciaa = !(git cia -a)
-  #commit amend all force (don't update commit message)
-  ciaaf = !(git ciaa --no-edit)
+  ciaa = commit --amend -a
+  #commit amend force
+  ciaf = commit --amend --no-edit 
+  #commit amend all force
+  ciaaf = commit --amend -a --no-edit
 
   clfd = clean -f -d
   #clean branches (delete branches that have already been merged on to master)
