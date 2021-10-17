@@ -1,0 +1,11 @@
+#!/bin/bash
+
+date \
+	&& solana epoch-info | tail -n+2
+
+accounts=($(env | tr ":" '\n' | grep "SOL_STAKE_ACCOUNT_" | cut -d= -f2))
+
+for account in "${accounts[@]}"; do
+	solana stake-account "$account"
+done
+
