@@ -54,6 +54,8 @@
 
   rco = "!_() { git reset \"$@\" && git checkout \"$@\"; }; _"
 
+  rl = reflog --date=local
+
   st = status
 
   sta = stash
