@@ -26,6 +26,7 @@
 
   co = checkout
   cob = checkout -b
+  com = co main
   #checkout patch-mode
   cop = checkout -p
 
