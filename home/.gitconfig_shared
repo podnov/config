@@ -43,6 +43,7 @@
   ls = ls-files
 
   po = pull origin
+  pop = pull origin --prune
 
   pushoh = push origin HEAD
   pushohf = !(git pushoh --force-with-lease)
