@@ -36,6 +36,9 @@
   dc = diff --cached
   df = diff
 
+  fo = fetch origin
+  fop = fetch origin --prune
+
   # Show files ignored by git:
   ign = ls-files -o -i --exclude-standard
 
