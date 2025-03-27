@@ -9,6 +9,7 @@
 
   br = branch
   bd = branch -D
+  bdp = branch -D @{-1}
 
   ci = commit
   #commit amend
