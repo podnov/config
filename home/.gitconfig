@@ -8,5 +8,6 @@
 	filemode = false
 [credential]
 	helper = cache --timeout=300
+	credentialStore = cache
 [alias]
 	com = checkout main

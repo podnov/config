@@ -27,7 +27,7 @@
 
   co = checkout
   cob = checkout -b
-  com = co main
+  com = !git co $(awk -F "/" '{print $NF}' .git/refs/remotes/origin/HEAD)
   #checkout patch-mode
   cop = checkout -p
 
